@@ -7,7 +7,12 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://deploy-frontend-login-eeum536x9-eko-nofiyanto.vercel.app/login"],
+    credentials: true,
+  })
+);
 
 app.use("/api/auth", authRoutes);
 
