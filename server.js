@@ -11,6 +11,7 @@ app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.use("/api/auth", authRoutes);
 
-app.listen(process.env.PORT, () =>
-  console.log(`✅ Server berjalan di port ${process.env.PORT}`)
+const PORT = process.env.PORT || 5000; // fallback ke 5000 jika dijalankan lokal
+app.listen(PORT, () =>
+  console.log(`✅ Server berjalan di port ${PORT}`)
 );
